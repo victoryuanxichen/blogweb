@@ -13,6 +13,13 @@
         "navigationStyle": "custom",
         "navigationBarTitleText": "文章"
       }
+    },
+    {
+      "path": "pages/project/detail",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "项目"
+      }
     }
   ],
   "globalStyle": {
