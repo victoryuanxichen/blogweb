@@ -3,8 +3,8 @@
     <view class="project-nav">
       <button class="back-button" @click="goBack">返回</button>
       <view class="reader-brand">
-        <text class="brand-mark">止</text>
-        <text>项目记录</text>
+        <text class="brand-mark">YX</text>
+        <text>CASE FILE</text>
       </view>
     </view>
 
@@ -131,6 +131,35 @@ function openNextProject() {
 }
 
 .project-nav,
+.project-meta,
+.project-title,
+.project-desc,
+.stack-panel,
+.project-grid {
+  animation: project-rise var(--motion-slow) var(--ease-out) both;
+}
+
+.project-meta {
+  animation-delay: 80ms;
+}
+
+.project-title {
+  animation-delay: 140ms;
+}
+
+.project-desc {
+  animation-delay: 200ms;
+}
+
+.stack-panel {
+  animation-delay: 260ms;
+}
+
+.project-grid {
+  animation-delay: 340ms;
+}
+
+.project-nav,
 .reader-brand,
 .project-meta,
 .project-hero {
@@ -154,8 +183,10 @@ function openNextProject() {
   min-width: 72px;
   height: 38px;
   border-radius: 999px;
-  background: oklch(91% 0.025 88);
+  background: oklch(18% 0.045 246);
   color: var(--ink-muted);
+  border: 1px solid oklch(72% 0.14 194 / 0.32);
+  transition: transform var(--motion-fast) var(--ease-out), background var(--motion-fast) var(--ease-out);
 }
 
 .reader-brand {
@@ -168,11 +199,14 @@ function openNextProject() {
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 32px;
+  width: 38px;
   height: 32px;
-  border-radius: 7px;
-  background: var(--seal);
-  color: oklch(96% 0.014 71);
+  border: 1px solid oklch(72% 0.14 194 / 0.48);
+  border-radius: 6px;
+  background: oklch(12% 0.035 260);
+  color: oklch(91% 0.025 230);
+  font-size: 12px;
+  box-shadow: 0 0 18px oklch(72% 0.14 194 / 0.2);
 }
 
 .project-hero {
@@ -211,7 +245,10 @@ function openNextProject() {
 .side-block {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: oklch(94% 0.017 88 / 0.72);
+  background:
+    radial-gradient(circle at 100% 0%, oklch(72% 0.18 332 / 0.12), transparent 34%),
+    oklch(16% 0.04 252 / 0.82);
+  transition: transform var(--motion-mid) var(--ease-out), box-shadow var(--motion-mid) var(--ease-out);
 }
 
 .stack-panel {
@@ -240,6 +277,7 @@ function openNextProject() {
   background: var(--mineral-soft);
   color: var(--mineral);
   font-size: 13px;
+  transition: transform var(--motion-fast) var(--ease-out), background var(--motion-fast) var(--ease-out);
 }
 
 .project-grid {
@@ -251,8 +289,29 @@ function openNextProject() {
 }
 
 .case-section {
+  position: relative;
   padding: 34px 0;
   border-top: 1px solid var(--line);
+  animation: project-rise 620ms var(--ease-out) both;
+}
+
+.case-section:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.case-section:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.case-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 0;
+  height: 2px;
+  background: var(--seal);
+  transition: width var(--motion-mid) var(--ease-out);
 }
 
 .case-copy {
@@ -275,9 +334,14 @@ function openNextProject() {
   padding: 16px 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: oklch(94% 0.017 88 / 0.72);
+  background: oklch(16% 0.04 252 / 0.72);
   color: var(--ink);
   line-height: 1.55;
+  transition: transform var(--motion-mid) var(--ease-out), background var(--motion-mid) var(--ease-out), box-shadow var(--motion-mid) var(--ease-out);
+}
+
+.highlight-list text:nth-child(2n) {
+  transform: translateX(20px);
 }
 
 .project-side {
@@ -285,6 +349,7 @@ function openNextProject() {
   top: 28px;
   display: grid;
   gap: 18px;
+  animation: side-dock 720ms var(--ease-out) 420ms both;
 }
 
 .side-block {
@@ -304,6 +369,7 @@ function openNextProject() {
   border-radius: 7px;
   background: var(--ink);
   color: var(--paper-soft);
+  transition: transform var(--motion-fast) var(--ease-out), background var(--motion-fast) var(--ease-out);
 }
 
 .action-block button:nth-of-type(2) {
@@ -328,6 +394,63 @@ function openNextProject() {
   .action-block button:hover {
     transform: translateY(-1px);
   }
+
+  .back-button:hover {
+    background: oklch(24% 0.06 236);
+  }
+
+  .stack-panel:hover,
+  .side-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 34px oklch(28% 0.032 92 / 0.11);
+  }
+
+  .stack-list text:hover {
+    background: oklch(24% 0.08 194);
+    transform: translateY(-3px);
+  }
+
+  .case-section:hover::before {
+    width: 100%;
+  }
+
+  .highlight-list text:hover {
+    background: var(--mineral-soft);
+    box-shadow: 0 14px 28px oklch(28% 0.032 92 / 0.1);
+    transform: translateX(8px) translateY(-3px);
+  }
+
+  .highlight-list text:nth-child(2n):hover {
+    transform: translateX(28px) translateY(-3px);
+  }
+
+  .action-block button:hover {
+    background: var(--mineral);
+  }
+}
+
+@keyframes project-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes side-dock {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 860px) {
@@ -349,12 +472,21 @@ function openNextProject() {
     position: static;
     margin-top: 28px;
   }
+
+  .highlight-list text:nth-child(2n) {
+    transform: none;
+  }
 }
 
 @media (max-width: 520px) {
   .project-page {
-    width: calc(100% - 24px);
+    width: calc(100% - 20px);
     padding-top: 18px;
+    padding-bottom: 54px;
+  }
+
+  .project-nav {
+    margin-bottom: 34px;
   }
 
   .reader-brand text:last-child {
@@ -362,12 +494,46 @@ function openNextProject() {
   }
 
   .project-title {
-    font-size: clamp(38px, 13vw, 58px);
+    font-size: clamp(36px, 11.5vw, 52px);
+    line-height: 1.06;
   }
 
   .project-desc,
   .case-copy {
     font-size: 16px;
+  }
+
+  .project-desc,
+  .case-copy {
+    line-height: 1.72;
+  }
+
+  .project-meta {
+    gap: 8px 12px;
+  }
+
+  .stack-panel,
+  .side-block {
+    padding: 20px;
+  }
+
+  .project-grid {
+    margin-top: 38px;
+  }
+
+  .case-section {
+    padding: 28px 0;
+  }
+
+  .highlight-list text {
+    padding: 15px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 760px) {
+  .project-main,
+  .project-side {
+    max-width: 100%;
   }
 }
 </style>

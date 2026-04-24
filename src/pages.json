@@ -4,27 +4,27 @@
       "path": "pages/index/index",
       "style": {
         "navigationStyle": "custom",
-        "navigationBarTitleText": "山止川行"
+        "navigationBarTitleText": "YX AI LAB"
       }
     },
     {
       "path": "pages/post/detail",
       "style": {
         "navigationStyle": "custom",
-        "navigationBarTitleText": "文章"
+        "navigationBarTitleText": "FEED"
       }
     },
     {
       "path": "pages/project/detail",
       "style": {
         "navigationStyle": "custom",
-        "navigationBarTitleText": "项目"
+        "navigationBarTitleText": "CASE FILE"
       }
     }
   ],
   "globalStyle": {
-    "backgroundColor": "#f0ebdf",
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "山止川行"
+    "backgroundColor": "#111827",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "YX AI LAB"
   }
 }

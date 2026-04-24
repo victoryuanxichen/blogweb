@@ -3,8 +3,8 @@
     <view class="reader-nav">
       <button class="back-button" @click="goBack">返回</button>
       <view class="reader-brand">
-        <text class="brand-mark">止</text>
-        <text>山止川行</text>
+        <text class="brand-mark">YX</text>
+        <text>YX AI LAB</text>
       </view>
     </view>
 
@@ -150,6 +150,35 @@ function openTag(tag) {
 }
 
 .reader-nav,
+.article-meta,
+.article-title,
+.article-desc,
+.article-tags,
+.article-grid {
+  animation: article-rise var(--motion-slow) var(--ease-out) both;
+}
+
+.article-meta {
+  animation-delay: 80ms;
+}
+
+.article-title {
+  animation-delay: 140ms;
+}
+
+.article-desc {
+  animation-delay: 200ms;
+}
+
+.article-tags {
+  animation-delay: 260ms;
+}
+
+.article-grid {
+  animation-delay: 340ms;
+}
+
+.reader-nav,
 .reader-brand,
 .article-meta,
 .article-grid {
@@ -176,8 +205,10 @@ function openTag(tag) {
   min-width: 72px;
   height: 38px;
   border-radius: 999px;
-  background: oklch(91% 0.025 88);
+  background: oklch(18% 0.045 246);
   color: var(--ink-muted);
+  border: 1px solid oklch(72% 0.14 194 / 0.32);
+  transition: transform var(--motion-fast) var(--ease-out), background var(--motion-fast) var(--ease-out);
 }
 
 .reader-brand {
@@ -190,11 +221,14 @@ function openTag(tag) {
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 32px;
+  width: 38px;
   height: 32px;
-  border-radius: 7px;
-  background: var(--seal);
-  color: oklch(96% 0.014 71);
+  border: 1px solid oklch(72% 0.14 194 / 0.48);
+  border-radius: 6px;
+  background: oklch(12% 0.035 260);
+  color: oklch(91% 0.025 230);
+  font-size: 12px;
+  box-shadow: 0 0 18px oklch(72% 0.14 194 / 0.2);
 }
 
 .article-shell {
@@ -238,10 +272,11 @@ function openTag(tag) {
 .article-tags button {
   min-height: 34px;
   padding: 0 12px;
-  border: 1px solid oklch(75% 0.026 88);
+  border: 1px solid oklch(72% 0.14 194 / 0.3);
   border-radius: 999px;
-  background: oklch(92% 0.023 88 / 0.78);
+  background: oklch(18% 0.045 246 / 0.78);
   color: var(--ink-muted);
+  transition: transform var(--motion-fast) var(--ease-out), background var(--motion-fast) var(--ease-out), color var(--motion-fast) var(--ease-out);
 }
 
 .article-grid {
@@ -256,6 +291,7 @@ function openTag(tag) {
   width: 260px;
   flex: 0 0 260px;
   padding-top: 8px;
+  animation: side-slip 720ms var(--ease-out) 420ms both;
 }
 
 .aside-label {
@@ -278,6 +314,7 @@ function openTag(tag) {
   color: var(--ink-muted);
   line-height: 1.55;
   text-align: left;
+  transition: color var(--motion-fast) var(--ease-out), transform var(--motion-fast) var(--ease-out);
 }
 
 .action-list {
@@ -293,6 +330,7 @@ function openTag(tag) {
   background: var(--mineral-soft);
   color: var(--mineral);
   text-align: left;
+  transition: transform var(--motion-fast) var(--ease-out), background var(--motion-fast) var(--ease-out);
 }
 
 .action-feedback {
@@ -311,9 +349,13 @@ function openTag(tag) {
 .pullquote {
   margin: 0 0 42px;
   padding: clamp(22px, 4vw, 34px);
-  border: 1px solid oklch(75% 0.03 86);
+  border: 1px solid oklch(72% 0.14 194 / 0.3);
   border-radius: 8px;
-  background: oklch(94% 0.018 86 / 0.76);
+  background:
+    radial-gradient(circle at 100% 0%, oklch(72% 0.18 332 / 0.14), transparent 36%),
+    oklch(16% 0.04 252 / 0.86);
+  animation: paper-tilt 780ms var(--ease-out) 440ms both;
+  transition: transform var(--motion-mid) var(--ease-out), box-shadow var(--motion-mid) var(--ease-out);
 }
 
 .pullquote text {
@@ -324,9 +366,34 @@ function openTag(tag) {
 }
 
 .article-section {
+  position: relative;
   display: block;
   padding: 36px 0;
   border-top: 1px solid var(--line);
+  animation: article-rise 620ms var(--ease-out) both;
+}
+
+.article-section:nth-of-type(2) {
+  animation-delay: 80ms;
+}
+
+.article-section:nth-of-type(3) {
+  animation-delay: 160ms;
+}
+
+.article-section:nth-of-type(4) {
+  animation-delay: 240ms;
+}
+
+.article-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 0;
+  height: 2px;
+  background: var(--seal);
+  transition: width var(--motion-mid) var(--ease-out);
 }
 
 .section-title {
@@ -334,6 +401,7 @@ function openTag(tag) {
   font-family: var(--font-display);
   font-size: clamp(26px, 3vw, 34px);
   line-height: 1.22;
+  transition: transform var(--motion-fast) var(--ease-out);
 }
 
 .section-body {
@@ -360,6 +428,7 @@ function openTag(tag) {
   background: var(--mineral-soft);
   color: var(--ink);
   text-align: left;
+  transition: transform var(--motion-mid) var(--ease-out), box-shadow var(--motion-mid) var(--ease-out), background var(--motion-mid) var(--ease-out);
 }
 
 .reading-nav button text:first-child {
@@ -383,6 +452,79 @@ function openTag(tag) {
   .toc-list button:hover,
   .article-tags button:hover {
     transform: translateY(-1px);
+  }
+
+  .back-button:hover {
+    background: oklch(24% 0.06 236);
+  }
+
+  .article-tags button:hover {
+    background: var(--mineral-soft);
+    color: var(--mineral);
+  }
+
+  .toc-list button:hover {
+    color: var(--seal);
+    transform: translateX(6px);
+  }
+
+  .action-list button:hover {
+    background: oklch(24% 0.08 194);
+    transform: translateX(4px);
+  }
+
+  .pullquote:hover {
+    transform: rotate(-0.35deg) translateY(-3px);
+    box-shadow: 0 18px 36px oklch(28% 0.03 92 / 0.11);
+  }
+
+  .article-section:hover::before {
+    width: 100%;
+  }
+
+  .article-section:hover .section-title {
+    transform: translateX(8px);
+  }
+
+  .reading-nav button:hover {
+    background: oklch(24% 0.08 194);
+    box-shadow: 0 18px 34px oklch(28% 0.032 92 / 0.12);
+  }
+}
+
+@keyframes article-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes side-slip {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes paper-tilt {
+  from {
+    opacity: 0;
+    transform: translateY(18px) rotate(0.8deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(-0.25deg);
   }
 }
 
@@ -419,8 +561,13 @@ function openTag(tag) {
 
 @media (max-width: 520px) {
   .detail-page {
-    width: calc(100% - 24px);
+    width: calc(100% - 20px);
     padding-top: 18px;
+    padding-bottom: 54px;
+  }
+
+  .reader-nav {
+    margin-bottom: 34px;
   }
 
   .reader-brand text:last-child {
@@ -428,7 +575,8 @@ function openTag(tag) {
   }
 
   .article-title {
-    font-size: clamp(38px, 13vw, 58px);
+    font-size: clamp(36px, 11.5vw, 52px);
+    line-height: 1.06;
   }
 
   .article-desc,
@@ -436,9 +584,63 @@ function openTag(tag) {
     font-size: 16px;
   }
 
+  .article-desc {
+    line-height: 1.72;
+  }
+
+  .article-tags {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .article-tags button {
+    min-height: 32px;
+    font-size: 12px;
+  }
+
+  .article-grid {
+    margin-top: 34px;
+  }
+
+  .article-aside {
+    margin-bottom: 24px;
+  }
+
+  .pullquote {
+    margin-bottom: 26px;
+    padding: 20px;
+  }
+
+  .pullquote text {
+    font-size: clamp(22px, 7vw, 29px);
+  }
+
+  .article-section {
+    padding: 28px 0;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 7.2vw, 31px);
+  }
+
   .action-list,
   .reading-nav {
     grid-template-columns: 1fr;
+  }
+
+  .reading-nav button {
+    min-height: 108px;
+    padding: 18px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 760px) {
+  .toc-list {
+    gap: 10px;
+  }
+
+  .article-body {
+    max-width: 100%;
   }
 }
 </style>

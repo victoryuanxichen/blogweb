@@ -1,10 +1,10 @@
-export const topics = ['全部', '全栈工程', '人工智能', 'Agent 实践', '阅读笔记', '生活侧影']
+export const topics = ['All', 'Full-stack', 'AI Systems', 'Agent Lab', 'System Reading', 'Field Log']
 
 export const posts = [
   {
     id: 1,
     slug: 'ai-agent-product-loop',
-    topic: '人工智能',
+    topic: 'AI Systems',
     month: '04',
     day: '21',
     date: '2026.04.21',
@@ -37,7 +37,7 @@ export const posts = [
   {
     id: 2,
     slug: 'fullstack-observability-budget',
-    topic: '全栈工程',
+    topic: 'Full-stack',
     month: '04',
     day: '16',
     date: '2026.04.16',
@@ -66,7 +66,7 @@ export const posts = [
   {
     id: 3,
     slug: 'rag-for-real-product',
-    topic: '人工智能',
+    topic: 'AI Systems',
     month: '04',
     day: '09',
     date: '2026.04.09',
@@ -95,7 +95,7 @@ export const posts = [
   {
     id: 4,
     slug: 'frontend-backend-contracts',
-    topic: '全栈工程',
+    topic: 'Full-stack',
     month: '03',
     day: '30',
     date: '2026.03.30',
@@ -124,7 +124,7 @@ export const posts = [
   {
     id: 5,
     slug: 'reading-notes-designing-data-intensive',
-    topic: '阅读笔记',
+    topic: 'System Reading',
     month: '03',
     day: '22',
     date: '2026.03.22',
@@ -153,7 +153,7 @@ export const posts = [
   {
     id: 6,
     slug: 'quiet-weekend-walk',
-    topic: '生活侧影',
+    topic: 'Field Log',
     month: '03',
     day: '12',
     date: '2026.03.12',
@@ -182,10 +182,10 @@ export const posts = [
 ]
 
 export const navItems = [
-  { label: '札记', target: 'articles' },
-  { label: '项目', target: 'projects' },
-  { label: '书单', target: 'books' },
-  { label: '关于', target: 'about' }
+  { label: 'FEED', target: 'articles' },
+  { label: 'CASES', target: 'projects' },
+  { label: 'STACK', target: 'books' },
+  { label: 'PROFILE', target: 'about' }
 ]
 
 export const queue = ['把 AI Agent 放进产品闭环', 'RAG 内容契约检查表', '全栈可观测性预算']
@@ -220,7 +220,7 @@ export const projects = [
     cover: '一个兼顾个人品牌、长期写作和工程记录的博客系统。',
     problem: '普通博客模板容易只像文章列表，无法表达全栈与 AI 项目的长期演进，也缺少项目、书单和文章之间的连接。',
     solution: '先做品牌化 H5 原型，再把文章、项目、书单抽成结构化内容，后续接入 Markdown、搜索、RSS 和部署流水线。',
-    highlights: ['纸感视觉系统', '文章与项目双入口', '详情页阅读路径和标签回流'],
+    highlights: ['高能实验室视觉系统', '文章与项目双入口', '详情页阅读路径和标签回流'],
     results: ['完成首页原型', '完成文章详情页', '完成项目详情页雏形']
   },
   {

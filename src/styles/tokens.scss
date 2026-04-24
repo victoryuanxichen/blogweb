@@ -1,16 +1,20 @@
 :root {
-  --paper: oklch(94.5% 0.018 88);
-  --paper-deep: oklch(89% 0.026 83);
-  --paper-soft: oklch(97% 0.012 90);
-  --ink: oklch(24% 0.024 108);
-  --ink-muted: oklch(43% 0.03 101);
-  --ink-faint: oklch(61% 0.025 96);
-  --mineral: oklch(43% 0.085 158);
-  --mineral-soft: oklch(89% 0.045 154);
-  --seal: oklch(53% 0.16 31);
-  --line: oklch(76% 0.027 86);
-  --shadow: 0 26px 60px oklch(33% 0.04 87 / 0.12);
+  --paper: oklch(14% 0.026 258);
+  --paper-deep: oklch(9.5% 0.025 258);
+  --paper-soft: oklch(19% 0.032 255);
+  --ink: oklch(93% 0.018 238);
+  --ink-muted: oklch(74% 0.05 236);
+  --ink-faint: oklch(58% 0.055 236);
+  --mineral: oklch(72% 0.14 194);
+  --mineral-soft: oklch(24% 0.06 207);
+  --seal: oklch(72% 0.18 332);
+  --line: oklch(43% 0.07 246);
+  --shadow: 0 34px 84px oklch(7% 0.026 258 / 0.48);
   --font-body: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
-  --font-display: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  --font-display: "Arial Black", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-snap: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-fast: 220ms;
+  --motion-mid: 420ms;
+  --motion-slow: 780ms;
 }
