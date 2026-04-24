@@ -1,0 +1,23 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "山止川行"
+      }
+    },
+    {
+      "path": "pages/post/detail",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "文章"
+      }
+    }
+  ],
+  "globalStyle": {
+    "backgroundColor": "#f0ebdf",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "山止川行"
+  }
+}

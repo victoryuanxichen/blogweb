@@ -1,0 +1,14 @@
+{
+  "name": "山止川行",
+  "appid": "__UNI__BLOGWEB",
+  "description": "一个基于 uni-app 的个人博客前端原型",
+  "versionName": "0.1.0",
+  "versionCode": "1",
+  "transformPx": false,
+  "h5": {
+    "title": "山止川行",
+    "router": {
+      "mode": "hash"
+    }
+  }
+}

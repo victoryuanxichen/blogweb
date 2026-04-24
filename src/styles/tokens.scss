@@ -1,0 +1,16 @@
+:root {
+  --paper: oklch(94.5% 0.018 88);
+  --paper-deep: oklch(89% 0.026 83);
+  --paper-soft: oklch(97% 0.012 90);
+  --ink: oklch(24% 0.024 108);
+  --ink-muted: oklch(43% 0.03 101);
+  --ink-faint: oklch(61% 0.025 96);
+  --mineral: oklch(43% 0.085 158);
+  --mineral-soft: oklch(89% 0.045 154);
+  --seal: oklch(53% 0.16 31);
+  --line: oklch(76% 0.027 86);
+  --shadow: 0 26px 60px oklch(33% 0.04 87 / 0.12);
+  --font-body: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  --font-display: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
